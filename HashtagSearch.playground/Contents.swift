@@ -11,33 +11,46 @@ class Restaurant {
     let streetAddress: String
     let city: String
     let state: String
-    let reviews: [String]?
+    var reviews: [Reviews]
     
-    init(name: String, streetAddress: String, city: String, state: String, reviews: [String]?) {
+    init(name: String, streetAddress: String, city: String, state: String, reviews: [Reviews] = []) {
         self.name = name
         self.streetAddress = streetAddress
         self.city = city
         self.state = state
         self.reviews = reviews
     }
-    
-    var hashtags {
-         
-    }
-    
-    var restaurans = ["Chipotle", "Papa John", "The Red Lobster", "El Chapin", "Se llama Peru"]
 }
 
 class Reviews {
     let username: String
     let text: String
     
+    var hashtags: [String] {
+        let words = text.componentsSeparatedByString(" ")//Here we are just getting every section of the string that is searated by a space. in other words, every word of the string
+        var hashtagsArray: [String] = []
+        for word in words {
+            if word.hasPrefix("#") {
+                hashtagsArray.append(word)
+            }
+        }
+        return hashtagsArray
+    }
+    
     init(username: String, text: String) {
         self.username = username
         self.text = text
     }
     
-    var restaurantReviews = ["So Good!", "Ummm.. #eww", "Delish!", "Good service, good food. #awesome"]
-    
 }
+
+let papas = Restaurant(name: "Papa's", streetAddress: "123FakeStreet", city: "SugarHouse", state: "Utah")
+
+let papasReview = Reviews(username: "Karl", text: "Very good! #Good")
+
+print(papasReview.hashtags)
+
+
+
+
 

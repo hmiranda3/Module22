@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gQr-rj-iDM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Image Collection View Controller-->
+        <scene sceneID="jwh-fM-zZC">
+            <objects>
+                <collectionViewController id="gQr-rj-iDM" customClass="ImageCollectionViewController" customModule="CollectionViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UCe-ra-nPH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OJe-66-srP">
+                            <size key="itemSize" width="137" height="129"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="pCf-LC-skF" customClass="imageCollectionViewCell" customModule="CollectionViews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="137" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="137" height="129"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eKG-Mh-lcy">
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="129"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="eKG-Mh-lcy" firstAttribute="leading" secondItem="pCf-LC-skF" secondAttribute="leading" id="HfV-Rb-Gax"/>
+                                    <constraint firstItem="eKG-Mh-lcy" firstAttribute="top" secondItem="pCf-LC-skF" secondAttribute="top" id="cha-NE-OG2"/>
+                                    <constraint firstAttribute="trailing" secondItem="eKG-Mh-lcy" secondAttribute="trailing" id="qQr-24-0Vx"/>
+                                    <constraint firstAttribute="bottom" secondItem="eKG-Mh-lcy" secondAttribute="bottom" id="sgB-Fo-vG8"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="eKG-Mh-lcy" id="Eb0-YE-YgR"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gQr-rj-iDM" id="qlj-gU-KTS"/>
+                            <outlet property="delegate" destination="gQr-rj-iDM" id="FpC-R2-eKt"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFM-vc-v6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="463"/>
+        </scene>
+    </scenes>
+</document>

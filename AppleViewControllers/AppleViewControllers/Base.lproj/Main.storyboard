@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppleViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="oYs-aS-HT6">
+                                <rect key="frame" x="240" y="391" width="121" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siy-WP-oEf">
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="30"/>
+                                        <state key="normal" title="Email"/>
+                                        <connections>
+                                            <action selector="emailTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IAg-5o-ZVg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM6-bd-em6">
+                                        <rect key="frame" x="81" y="0.0" width="40" height="30"/>
+                                        <state key="normal" title="Share"/>
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jCA-wE-UrP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf2-7h-S8B">
+                                <rect key="frame" x="215" y="550" width="170" height="30"/>
+                                <state key="normal" title="Get Image From Browser"/>
+                                <connections>
+                                    <action selector="BrowserButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GU7-gV-MQY"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u4L-Vo-EBV">
+                                <rect key="frame" x="20" y="20" width="560" height="363"/>
+                                <color key="backgroundColor" red="0.34204593119999999" green="0.82337982379999997" blue="0.96775377520000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="363" id="PKA-SP-v0j"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gst-z7-3kf" appends="YES" id="MOk-0R-6Yd"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xf2-7h-S8B" secondAttribute="bottom" constant="20" symbolic="YES" id="RSE-87-AR3"/>
+                            <constraint firstItem="u4L-Vo-EBV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WNC-QH-A4A"/>
+                            <constraint firstItem="oYs-aS-HT6" firstAttribute="centerX" secondItem="xf2-7h-S8B" secondAttribute="centerX" id="ZDX-Ho-3X5"/>
+                            <constraint firstItem="u4L-Vo-EBV" firstAttribute="centerX" secondItem="oYs-aS-HT6" secondAttribute="centerX" id="gXy-2w-ww0"/>
+                            <constraint firstItem="oYs-aS-HT6" firstAttribute="top" secondItem="u4L-Vo-EBV" secondAttribute="bottom" constant="8" symbolic="YES" id="hxz-a9-B4B"/>
+                            <constraint firstItem="u4L-Vo-EBV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oQX-P5-Fyw"/>
+                            <constraint firstItem="u4L-Vo-EBV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uBg-LE-UwK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myImageView" destination="u4L-Vo-EBV" id="CZA-9x-qCp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gst-z7-3kf">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="Ouf-da-001"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="565" y="479"/>
+        </scene>
+    </scenes>
+</document>
